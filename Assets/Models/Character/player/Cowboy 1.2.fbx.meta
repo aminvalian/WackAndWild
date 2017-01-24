@@ -1,0 +1,180 @@
+fileFormatVersion: 2
+guid: 4f29e6dd5e41beb4c81de26c55cd3ed8
+timeCreated: 1466536285
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: CG
+    100002: CowBoy
+    100004: //RootNode
+    100006: Head
+    100008: L_Calf
+    100010: L_Clavicle
+    100012: L_Finger0
+    100014: L_Finger01
+    100016: L_Finger02
+    100018: L_Finger1
+    100020: L_Finger11
+    100022: L_Finger12
+    100024: L_Finger2
+    100026: L_Finger21
+    100028: L_Finger22
+    100030: L_Finger3
+    100032: L_Finger31
+    100034: L_Finger32
+    100036: L_Finger4
+    100038: L_Finger41
+    100040: L_Finger42
+    100042: L_Foot
+    100044: L_Forearm
+    100046: L_Hand
+    100048: L_Thigh
+    100050: L_UpperArm
+    100052: Neck
+    100054: Pelvis
+    100056: R_Calf
+    100058: R_Clavicle
+    100060: R_Finger0
+    100062: R_Finger01
+    100064: R_Finger02
+    100066: R_Finger1
+    100068: R_Finger11
+    100070: R_Finger12
+    100072: R_Finger2
+    100074: R_Finger21
+    100076: R_Finger22
+    100078: R_Finger3
+    100080: R_Finger31
+    100082: R_Finger32
+    100084: R_Finger4
+    100086: R_Finger41
+    100088: R_Finger42
+    100090: R_Foot
+    100092: R_Forearm
+    100094: R_Hand
+    100096: R_Thigh
+    100098: R_UpperArm
+    100100: Skin
+    100102: Spine
+    100104: Spine1
+    400000: CG
+    400002: CowBoy
+    400004: //RootNode
+    400006: Head
+    400008: L_Calf
+    400010: L_Clavicle
+    400012: L_Finger0
+    400014: L_Finger01
+    400016: L_Finger02
+    400018: L_Finger1
+    400020: L_Finger11
+    400022: L_Finger12
+    400024: L_Finger2
+    400026: L_Finger21
+    400028: L_Finger22
+    400030: L_Finger3
+    400032: L_Finger31
+    400034: L_Finger32
+    400036: L_Finger4
+    400038: L_Finger41
+    400040: L_Finger42
+    400042: L_Foot
+    400044: L_Forearm
+    400046: L_Hand
+    400048: L_Thigh
+    400050: L_UpperArm
+    400052: Neck
+    400054: Pelvis
+    400056: R_Calf
+    400058: R_Clavicle
+    400060: R_Finger0
+    400062: R_Finger01
+    400064: R_Finger02
+    400066: R_Finger1
+    400068: R_Finger11
+    400070: R_Finger12
+    400072: R_Finger2
+    400074: R_Finger21
+    400076: R_Finger22
+    400078: R_Finger3
+    400080: R_Finger31
+    400082: R_Finger32
+    400084: R_Finger4
+    400086: R_Finger41
+    400088: R_Finger42
+    400090: R_Foot
+    400092: R_Forearm
+    400094: R_Hand
+    400096: R_Thigh
+    400098: R_UpperArm
+    400100: Skin
+    400102: Spine
+    400104: Spine1
+    4300000: CowBoy
+    9500000: //RootNode
+    13700000: CowBoy
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

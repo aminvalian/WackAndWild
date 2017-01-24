@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Obstacle
+  - Horse
+  - Villain
+  - RightChest
+  - LeftChest
+  - Head
+  - RightLeg
+  - LeftLeg
+  - Ground
+  - Minigun
+  - Cowboy
+  - BombIcon
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - NPC
+  - Player
+  - Ground
+  - Villain
+  - reward
+  - envi
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: rain
+    uniqueID: 894072159
+    locked: 0
