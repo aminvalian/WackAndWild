@@ -30,7 +30,7 @@ public class RoadScroller : MonoBehaviour {
             if (i > 0)
             {
                 g.transform.SetParent(inGameTerrains[inGameTerrains.Count - 2].transform);
-                if(i%2 == 1)
+                if(i> 1)
                 {
                     g.GetComponent<TerrainScript>().containsVillain = true;
                 }
@@ -69,7 +69,7 @@ public class RoadScroller : MonoBehaviour {
             }
             nextTerrains.RemoveAt(0);
             //if game is not over and last terrain does not have villain and it is not right after a turn 
-            if (!inGameTerrains[inGameTerrains.Count - 1].GetComponent<TerrainScript>().containsVillain && inGameTerrains[inGameTerrains.Count - 1].GetComponent<TerrainScript>().type<2 && !main.gameIsOver)
+            if (inGameTerrains[inGameTerrains.Count - 1].GetComponent<TerrainScript>().type<2 && !main.gameIsOver)
             {
                 g.GetComponent<TerrainScript>().containsVillain = true;
             }

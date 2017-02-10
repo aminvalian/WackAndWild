@@ -94,17 +94,23 @@ public class PlayerScript : MonoBehaviour {
     {
 
         RaycastHit[] hit = (Physics.RaycastAll(Camera.main.ScreenPointToRay(inputPos)));
-        for (int i = 0; i < hit.Length; i++)
+        for (int i = 0; i < hit.Length;i++)//int i = hit.Length-1; i >=0; i--)
         {
-            if (hit[i].collider.gameObject.layer == 11)
+            if (hit[i].collider.gameObject.layer == 11 || hit[i].collider.gameObject.layer == 13)
             {
-                if (hit[i].collider != null)
+                if (hit.Length+""+hit[i].collider != null)
                 {
-                    if (hit[i].collider.GetComponentInParent<VillainScript>() != null)
+                    Debug.Log(hit[i].collider.tag);
+                    if(hit[i].collider.tag == "Wood")
                     {
-                        gun.GetComponentInChildren<GunScript>().shoot(hit[i].collider.tag , hit[i].collider);
+                        //create wood shot smoke
+                        i = hit.Length;
+                    }
+                    else if (hit[i].collider.GetComponentInParent<VillainScript>() != null)
+                    {
+                        gun.GetComponentInChildren<GunScript>().shoot(hit[i].collider.tag, hit[i].collider);
                         anim.SetTrigger("shoot");
-
+                        //i = -1;
                     }
                 }
             }

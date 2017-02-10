@@ -61,7 +61,7 @@ public class NavigatorScript : MonoBehaviour {
                 //Debug.Log("f:" + fAngle + " , d:" + diffAngle +" ,angle:"+transform.eulerAngles.y+ " , add:" + ((1 / Vector3.Distance(transform.position, navPoints[0].position)) * diffAngle * 0.1f));
                 if (0.5f < Mathf.Abs(diffAngle))
                 {
-                    transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + ((1 / Vector3.Distance(transform.position, navPoints[0].position)) * diffAngle * 0.1f), transform.eulerAngles.z);
+                    transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + ((1 / Vector3.Distance(transform.position, navPoints[0].position)) * diffAngle * 0.1f*carriageObject.GetComponentInParent<CarriageScript>().speed), transform.eulerAngles.z);
                 }
                 else
                 {

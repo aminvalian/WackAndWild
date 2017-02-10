@@ -10,10 +10,13 @@ public class VillainScript : MonoBehaviour {
     public GunScript gun;
     public Animator anim;
     public float reloadTime;
+    public float aimTime;
     public float health;
-    private float time;
+    private float hiddenTime;
     private CameraScript cam;
     public bool alive = true;
+    public int shootingCount;
+    public Collider colliders;
 
 	// Use this for initialization
 	void Start () {
@@ -21,24 +24,37 @@ public class VillainScript : MonoBehaviour {
         engine = GameObject.Find("Engine").GetComponent<MainScript>();
         anim = GetComponent<Animator>();
         anim.SetInteger("type", type);
+        anim.SetBool("hidden", true);
         carriage = engine.GetComponent<RoadScroller>().carriageObject;
-        
+        aimTime = Random.Range(0, 2);
 	}
 	
 	// Update is called once per frame
 	void Update () {
         anim.speed = engine.gameSpeed;
         transform.position = new Vector3(transform.position.x - 0.05f * carriage.GetComponent<CarriageScript>().speed * engine.gameSpeed * Mathf.Sin(Mathf.Deg2Rad * carriage.transform.eulerAngles.y), transform.position.y, transform.position.z - 0.05f * carriage.GetComponent<CarriageScript>().speed * engine.gameSpeed * Mathf.Cos(Mathf.Deg2Rad * carriage.transform.eulerAngles.y));
-        if (time > 0)
-            time -= Time.deltaTime * engine.gameSpeed;
+        if (hiddenTime > 0)
+            hiddenTime -= Time.deltaTime * engine.gameSpeed;
         if (alive)
         {
-            transform.LookAt(new Vector3(carriage.transform.position.x, transform.position.y, carriage.transform.position.z));
-            if (Vector3.Distance(transform.position, carriage.transform.position) < 20 && time <= 0)
+            transform.LookAt(Vector3.zero, Vector3.up);
+            if (Vector3.Distance(transform.position, carriage.transform.position) < 40 && hiddenTime <= 0 )
             {
-                anim.SetTrigger("shoot");
-                gun.shoot(null , null);  //random damage will be dellivered to the player(not scripted yet)
-                time = reloadTime;
+
+                anim.SetBool("hidden", false);
+                aimTime -= Time.deltaTime * engine.gameSpeed;
+                if (aimTime <= 0 && shootingCount >0)
+                {
+                    anim.SetTrigger("shoot");
+                    gun.shoot(null, null);  //random damage will be dellivered to the player(not scripted yet)
+                    shootingCount--;
+                    aimTime = Random.Range(1, 2);
+                }
+                
+                if (shootingCount == 0)
+                {
+                    StartCoroutine(crouch());
+                }
             }
         }
         if (Vector3.Distance(transform.position, carriage.transform.position) < 45 && cam.anim.GetCurrentAnimatorStateInfo(0).IsName("Camera Idle") && transform.position.z+transform.position.x>5 && alive) { 
@@ -54,6 +70,16 @@ public class VillainScript : MonoBehaviour {
             Destroy(gameObject);
         }
 	}
+
+    public IEnumerator crouch()
+    {
+        shootingCount = Random.Range(1, 4);
+        hiddenTime = reloadTime;
+        
+        yield return new WaitForSeconds(1.5f);
+        anim.SetBool("hidden", true);
+        hiddenTime = reloadTime;
+    }
 
     public void DeliverDamage(float gunPower, int position)
     {
@@ -74,7 +100,7 @@ public class VillainScript : MonoBehaviour {
                 break;
             
         }
-        Debug.Log(damage);
+        //Debug.Log(damage);
         damage *= gunPower;
         if(health<= damage)
         {
@@ -84,7 +110,7 @@ public class VillainScript : MonoBehaviour {
         {
             health -= damage;
         }
-        Debug.Log("h: "+health+"   d: "+ damage);
+        //Debug.Log("h: "+health+"   d: "+ damage);
 
     }
 

@@ -6,6 +6,7 @@ public class ObjGenerator : MonoBehaviour {
 
     public Transform p;
     public bool randomAngle;
+    public Vector3 angle;
     public bool keepParent;
 
     public List<GameObject> objs = new List<GameObject>();
@@ -19,12 +20,15 @@ public class ObjGenerator : MonoBehaviour {
             Quaternion q;
             if (randomAngle)
                 q = Quaternion.Euler(0, Random.Range(0, 359), 0);
-            else
+            else if (angle != Vector3.zero)
+                q = Quaternion.Euler(angle.x,angle.y,angle.z);
+            else 
                 q = Quaternion.identity;
             GameObject g = Instantiate(objs[r], transform.position, q) as GameObject;
             g.transform.SetParent(p);
             
         }
+
         if(!keepParent)
             Destroy(gameObject, 1);
     }
