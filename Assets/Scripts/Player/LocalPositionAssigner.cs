@@ -10,8 +10,8 @@ public class LocalPositionAssigner : MonoBehaviour {
         transform.localPosition = new Vector3(pos.x,pos.y,pos.z);
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	// FixedUpdate is called once per frame
+	void FixedUpdate () {
 	
 	}
 }

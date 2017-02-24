@@ -12,8 +12,8 @@ public class NavigatorScript : MonoBehaviour {
 	
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	// FixedUpdate is called once per frame
+	void FixedUpdate () {
        
         if (navPoints.Count > 1)
         {

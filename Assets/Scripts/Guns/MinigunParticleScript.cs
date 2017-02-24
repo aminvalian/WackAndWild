@@ -8,8 +8,8 @@ public class MinigunParticleScript : MonoBehaviour {
 	
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	// FixedUpdate is called once per frame
+	void FixedUpdate () {
 	
 	}
     void OnParticleCollision(GameObject other)

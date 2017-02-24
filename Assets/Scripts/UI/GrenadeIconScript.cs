@@ -11,8 +11,8 @@ public class GrenadeIconScript : MonoBehaviour {
     }
 
 
-    // Update is called once per frame
-    void Update()
+    // FixedUpdate is called once per frame
+    void FixedUpdate()
     {
         Vector3 inputPos = Vector3.zero;
 #if UNITY_ANDROID

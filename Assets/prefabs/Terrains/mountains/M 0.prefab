@@ -704,6 +704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p: {fileID: 436846}
   randomAngle: 1
+  angle: {x: 0, y: 0, z: 0}
   keepParent: 0
   objs:
   - {fileID: 136912, guid: 0ed87f90b5dce094e81b8453e348f3f7, type: 2}
@@ -721,9 +722,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p: {fileID: 491752}
   randomAngle: 0
+  angle: {x: 0, y: 0, z: 0}
   keepParent: 1
   objs:
-  - {fileID: 128396, guid: e9cbdd479506f6545add0bbaa77d5bf6, type: 2}
+  - {fileID: 173804, guid: 54cea4dff08557048893c200cfc6dfda, type: 2}
 --- !u!114 &11447308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -737,6 +739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p: {fileID: 436846}
   randomAngle: 1
+  angle: {x: 0, y: 0, z: 0}
   keepParent: 0
   objs:
   - {fileID: 136912, guid: 0ed87f90b5dce094e81b8453e348f3f7, type: 2}
@@ -754,6 +757,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p: {fileID: 436846}
   randomAngle: 1
+  angle: {x: 0, y: 0, z: 0}
   keepParent: 0
   objs:
   - {fileID: 136912, guid: 0ed87f90b5dce094e81b8453e348f3f7, type: 2}
@@ -771,6 +775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p: {fileID: 436846}
   randomAngle: 1
+  angle: {x: 0, y: 0, z: 0}
   keepParent: 0
   objs:
   - {fileID: 136912, guid: 0ed87f90b5dce094e81b8453e348f3f7, type: 2}
@@ -788,6 +793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p: {fileID: 436846}
   randomAngle: 1
+  angle: {x: 0, y: 0, z: 0}
   keepParent: 0
   objs:
   - {fileID: 136912, guid: 0ed87f90b5dce094e81b8453e348f3f7, type: 2}
@@ -805,6 +811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p: {fileID: 436846}
   randomAngle: 1
+  angle: {x: 0, y: 0, z: 0}
   keepParent: 0
   objs:
   - {fileID: 136912, guid: 0ed87f90b5dce094e81b8453e348f3f7, type: 2}

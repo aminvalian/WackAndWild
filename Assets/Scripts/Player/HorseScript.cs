@@ -13,8 +13,8 @@ public class HorseScript : MonoBehaviour {
 
     }
 	
-	// Update is called once per frame
-	void Update () {
+	// FixedUpdate is called once per frame
+	void FixedUpdate () {
         anim.speed = engine.gameSpeed;
 
     }

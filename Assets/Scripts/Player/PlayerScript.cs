@@ -12,6 +12,7 @@ public class PlayerScript : MonoBehaviour {
     public MainScript engine;
     public int grenadeCount; 
     public int grenadeObject; 
+    
     public GameObject grenadeTarget; 
 
 	// Use this for initialization
@@ -23,11 +24,11 @@ public class PlayerScript : MonoBehaviour {
 
     }
 
-    // Update is called once per frame
-    void Update () {
+    // FixedUpdate is called once per frame
+    void FixedUpdate () {
         bool shooted = false;
         Vector3 inputPos = Vector3.zero;
-        anim.speed = engine.gameSpeed;
+        //anim.speed = engine.gameSpeed;
 
         //spine rotation
         float x = Input.mousePosition.x - (Screen.width / 2);
@@ -82,7 +83,7 @@ public class PlayerScript : MonoBehaviour {
             inputPos = Input.mousePosition;
         }
 #endif
-        if (shooted  && anim.GetCurrentAnimatorStateInfo(0).IsName("Gun"+gunType+"Idle") )
+        if (shooted && engine.gameSpeed == 0.25 && anim.GetCurrentAnimatorStateInfo(0).IsName("Gun"+gunType+"Idle") )
         {
             shoot(inputPos);
 
@@ -100,7 +101,7 @@ public class PlayerScript : MonoBehaviour {
             {
                 if (hit.Length+""+hit[i].collider != null)
                 {
-                    Debug.Log(hit[i].collider.tag);
+
                     if(hit[i].collider.tag == "Wood")
                     {
                         //create wood shot smoke
@@ -108,9 +109,12 @@ public class PlayerScript : MonoBehaviour {
                     }
                     else if (hit[i].collider.GetComponentInParent<VillainScript>() != null)
                     {
-                        gun.GetComponentInChildren<GunScript>().shoot(hit[i].collider.tag, hit[i].collider);
-                        anim.SetTrigger("shoot");
-                        //i = -1;
+                        if (hit[i].collider.GetComponentInParent<VillainScript>().isShooting)
+                        {
+                            gun.GetComponentInChildren<GunScript>().shoot(hit[i].collider.tag, hit[i].collider);
+                            anim.SetTrigger("shoot");
+                            //i = -1;
+                        }
                     }
                 }
             }

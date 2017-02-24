@@ -9,8 +9,8 @@ public class SEscript : MonoBehaviour {
         transform.parent = GameObject.Find("Engine").GetComponent<RoadScroller>().inGameTerrains[0].transform;
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	// FixedUpdate is called once per frame
+	void FixedUpdate () {
 	
 	}
 }

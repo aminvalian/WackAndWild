@@ -11,6 +11,6 @@ public class RoadNavigator : MonoBehaviour {
         
 	}
 	
-	// Update is called once per frame
+	// FixedUpdate is called once per frame
 	
 }

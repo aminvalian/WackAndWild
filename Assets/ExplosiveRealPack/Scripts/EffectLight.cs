@@ -17,7 +17,7 @@ public class EffectLight : MonoBehaviour {
 	Light targetLight;
 
 	void Awake () {
-		UpdateSettings();
+		FixedUpdateSettings();
 	}
 
 	void OnEnable()
@@ -25,7 +25,7 @@ public class EffectLight : MonoBehaviour {
 		startTime = Time.time + delay;
 	}
 	
-	void Update ()
+	void FixedUpdate ()
 	{
 		if(startTime > Time.time || startTime + lifetime < Time.time)
 		{
@@ -44,7 +44,7 @@ public class EffectLight : MonoBehaviour {
 			startTime = Time.time;
 	}
 	
-	void UpdateSettings ()
+	void FixedUpdateSettings ()
 	{
 		targetLight = GetComponent<Light>();
 		originalIntensity = targetLight.intensity;

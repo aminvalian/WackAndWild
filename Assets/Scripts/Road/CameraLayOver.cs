@@ -11,8 +11,8 @@ public class CameraLayOver : MonoBehaviour {
         
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	// FixedUpdate is called once per frame
+	void FixedUpdate () {
         float m = cam.fieldOfView / 30;
         transform.localScale = new Vector3(m, m, m);
 	}

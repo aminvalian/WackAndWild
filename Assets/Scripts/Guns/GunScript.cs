@@ -17,8 +17,8 @@ public class GunScript : MonoBehaviour {
         }
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	// FixedUpdate is called once per frame
+	void FixedUpdate () {
 	
 	}
     public void shoot(string tag, Collider target)

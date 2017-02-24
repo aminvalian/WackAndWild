@@ -36,11 +36,10 @@ public class RoadScroller : MonoBehaviour {
                 }
             }
         }
-        GenerateTurn();
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	// FixedUpdate is called once per frame
+	void FixedUpdate() {
 
 	    // rotates all terrains according to carriage angle
         inGameTerrains[0].transform.position = new Vector3(inGameTerrains[0].transform.position.x - 0.05f *carriage.speed* main.gameSpeed* Mathf.Sin(Mathf.Deg2Rad * carriageObject.transform.eulerAngles.y) , inGameTerrains[0].transform.position.y, inGameTerrains[0].transform.position.z - 0.05f * carriage.speed* main.gameSpeed * Mathf.Cos(Mathf.Deg2Rad * carriageObject.transform.eulerAngles.y));
@@ -53,28 +52,14 @@ public class RoadScroller : MonoBehaviour {
                 nextTerrains.Add(inGameTerrains[inGameTerrains.Count - 1].GetComponent<TerrainScript>().type);
             }
             GameObject g = Instantiate(terrains[nextTerrains[0]]) as GameObject;
-            // if right turn gives 3 terrains space before next turn
-            if (nextTerrains[nextTerrains.Count - 1] == 2)
-            {
-                nextTerrains.Add (1);
-                nextTerrains.Add(1);
-                nextTerrains.Add(1);
-                GenerateTurn();
-            }
-            else if (nextTerrains[nextTerrains.Count - 1] == 3)
-            {
-                nextTerrains.Add(0);
-                nextTerrains.Add(0);
-                nextTerrains.Add(0);
-            }
+            
+           
             nextTerrains.RemoveAt(0);
             //if game is not over and last terrain does not have villain and it is not right after a turn 
             if (inGameTerrains[inGameTerrains.Count - 1].GetComponent<TerrainScript>().type<2 && !main.gameIsOver)
+            
             {
                 g.GetComponent<TerrainScript>().containsVillain = true;
-            }
-            else
-            {
                 float r = Random.Range(0, 10);
                 if (r < 4)
                 {
@@ -94,15 +79,27 @@ public class RoadScroller : MonoBehaviour {
 
     public void GenerateTurn()
     {
-        if (nextTerrains.Count  == 0)
+        Debug.Log("turn");
+        if(nextTerrains.Count == 0)
         {
-            if (inGameTerrains[inGameTerrains.Count - 1].GetComponent<TerrainScript>().type == 0)
+            nextTerrains.Add(inGameTerrains[inGameTerrains.Count - 1].GetComponent<TerrainScript>().type);
+        }
+        if (nextTerrains.Count  <= 6)
+        {
+            // if right turn gives 3 terrains space before next turn
+            if (nextTerrains[nextTerrains.Count - 1] == 0)
             {
                 nextTerrains.Add(2);
+                nextTerrains.Add(1);
+                nextTerrains.Add(1);
+                nextTerrains.Add(1);
             }
             else
             {
                 nextTerrains.Add(3);
+                nextTerrains.Add(0);
+                nextTerrains.Add(0);
+                nextTerrains.Add(0);
             }
         }
     }

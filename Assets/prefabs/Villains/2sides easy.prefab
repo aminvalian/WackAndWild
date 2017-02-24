@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 427552}
-  - 114: {fileID: 11450626}
+  - 114: {fileID: 11477354}
   m_Layer: 10
   m_Name: 2
   m_TagString: Untagged
@@ -55,7 +55,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 413238}
-  - 114: {fileID: 11412574}
+  - 114: {fileID: 11451386}
   m_Layer: 10
   m_Name: 3
   m_TagString: Untagged
@@ -87,7 +87,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 491262}
-  - 114: {fileID: 11462818}
+  - 114: {fileID: 11401026}
   m_Layer: 10
   m_Name: 4
   m_TagString: Untagged
@@ -134,7 +134,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 456970}
-  - 114: {fileID: 11473190}
+  - 114: {fileID: 11432408}
   m_Layer: 10
   m_Name: 1
   m_TagString: Untagged
@@ -287,6 +287,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 489186}
   m_RootOrder: 3
+--- !u!114 &11401026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd6c885d2c091724faed9729a388c6aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCaptain: 0
+  captain: {fileID: 11451386}
+  men: []
+  villains:
+  - {fileID: 199392, guid: f9f041b5b780a074b8b47b8a8ed3f2be, type: 2}
+  villain: {fileID: 0}
+  times:
+  - 0
+  - 1
+  - 2
+  - 3
 --- !u!114 &11411616
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -300,24 +322,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p: {fileID: 424034}
   randomAngle: 0
+  angle: {x: 0, y: 0, z: 0}
+  keepParent: 0
   objs:
-  - {fileID: 114806, guid: f23f0469012295a4a99072d1924908b9, type: 2}
   - {fileID: 137240, guid: 37a54bdcffb422a4e83267f39cffe41b, type: 2}
---- !u!114 &11412574
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 160154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f19d985287edd83489e2372246804019, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  p: {fileID: 0}
-  randomAngle: 0
-  objs:
-  - {fileID: 199392, guid: f9f041b5b780a074b8b47b8a8ed3f2be, type: 2}
 --- !u!114 &11415716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -331,24 +339,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p: {fileID: 424034}
   randomAngle: 0
+  angle: {x: 0, y: 0, z: 0}
+  keepParent: 0
   objs:
-  - {fileID: 114806, guid: f23f0469012295a4a99072d1924908b9, type: 2}
   - {fileID: 137240, guid: 37a54bdcffb422a4e83267f39cffe41b, type: 2}
---- !u!114 &11450626
+--- !u!114 &11432408
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 140692}
+  m_GameObject: {fileID: 190372}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f19d985287edd83489e2372246804019, type: 3}
+  m_Script: {fileID: 11500000, guid: cd6c885d2c091724faed9729a388c6aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  p: {fileID: 0}
-  randomAngle: 0
-  objs:
+  isCaptain: 0
+  captain: {fileID: 11451386}
+  men: []
+  villains:
   - {fileID: 199392, guid: f9f041b5b780a074b8b47b8a8ed3f2be, type: 2}
+  villain: {fileID: 0}
+  times:
+  - 0
+  - 1
+  - 2
+  - 3
+--- !u!114 &11451386
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd6c885d2c091724faed9729a388c6aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCaptain: 1
+  captain: {fileID: 0}
+  men: []
+  villains:
+  - {fileID: 199392, guid: f9f041b5b780a074b8b47b8a8ed3f2be, type: 2}
+  villain: {fileID: 0}
+  times:
+  - 0
+  - 1
+  - 2
+  - 3
 --- !u!114 &11461044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -362,24 +400,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p: {fileID: 424034}
   randomAngle: 0
+  angle: {x: 0, y: 0, z: 0}
+  keepParent: 0
   objs:
-  - {fileID: 114806, guid: f23f0469012295a4a99072d1924908b9, type: 2}
   - {fileID: 137240, guid: 37a54bdcffb422a4e83267f39cffe41b, type: 2}
---- !u!114 &11462818
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 173610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f19d985287edd83489e2372246804019, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  p: {fileID: 0}
-  randomAngle: 0
-  objs:
-  - {fileID: 199392, guid: f9f041b5b780a074b8b47b8a8ed3f2be, type: 2}
 --- !u!114 &11472354
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -393,24 +417,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p: {fileID: 424034}
   randomAngle: 0
+  angle: {x: 0, y: 0, z: 0}
+  keepParent: 0
   objs:
-  - {fileID: 114806, guid: f23f0469012295a4a99072d1924908b9, type: 2}
   - {fileID: 137240, guid: 37a54bdcffb422a4e83267f39cffe41b, type: 2}
---- !u!114 &11473190
+--- !u!114 &11477354
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190372}
+  m_GameObject: {fileID: 140692}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f19d985287edd83489e2372246804019, type: 3}
+  m_Script: {fileID: 11500000, guid: cd6c885d2c091724faed9729a388c6aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  p: {fileID: 0}
-  randomAngle: 0
-  objs:
+  isCaptain: 0
+  captain: {fileID: 11451386}
+  men: []
+  villains:
   - {fileID: 199392, guid: f9f041b5b780a074b8b47b8a8ed3f2be, type: 2}
+  villain: {fileID: 0}
+  times:
+  - 0
+  - 1
+  - 2
+  - 3
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

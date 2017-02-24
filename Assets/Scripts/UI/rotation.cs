@@ -9,8 +9,8 @@ public class rotation : MonoBehaviour {
        // StartCoroutine(rotate());
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	// FixedUpdate is called once per frame
+	void FixedUpdate () {
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + speed, transform.eulerAngles.z);
 
     }

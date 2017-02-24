@@ -15,8 +15,8 @@ public class DestroyScript : MonoBehaviour {
         
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	// FixedUpdate is called once per frame
+	void FixedUpdate () {
         if(anim != null)
             anim.speed = engine.gameSpeed;
         time += Time.deltaTime*engine.gameSpeed;

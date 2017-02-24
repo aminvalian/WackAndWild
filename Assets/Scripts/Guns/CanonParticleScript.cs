@@ -8,8 +8,8 @@ public class CanonParticleScript : MonoBehaviour {
 	
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	// FixedUpdate is called once per frame
+	void FixedUpdate () {
 	
 	}
 }

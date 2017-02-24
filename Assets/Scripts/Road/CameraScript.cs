@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CameraScript : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class CameraScript : MonoBehaviour
     public Animator anim;
     public PlayerScript player;
 
+    public float timer = 0;
+
 
 
     // Use this for initialization
@@ -22,25 +25,30 @@ public class CameraScript : MonoBehaviour
         player = carriage.GetComponentInChildren<PlayerScript>();
     }
 
-    // Update is called once per frame
-    void Update()
+    // FixedUpdate is called once per frame
+    void FixedUpdate()
     {
-        
-        
+        timer -= Time.deltaTime;        
         
     }
 
     public void ZoomIn()
     {
         player.anim.SetBool("draw", true);
+        engine.gameSpeed = 0.25f;
         anim.SetBool("zoomed", true);
         engine.zoomed = true;
+        timer = 8;
+
+
     }
     public void ZoomOut()
     {
         
         player.anim.SetBool("draw", false);
         engine.zoomed = false;
+        engine.gameSpeed = 1;
+        timer = 0;
         anim.SetBool("zoomed", false);
         engine.GetComponent<RoadScroller>().passedTrip++;
         if (engine.GetComponent<RoadScroller>().passedTrip == engine.GetComponent<RoadScroller>().totalTrip)
@@ -49,23 +57,27 @@ public class CameraScript : MonoBehaviour
         }
     }
 
-    public void CheckVillains()
+    public void CheckVillains(List<VillainScript> men)
     {
-        bool a = false;
-        GameObject[] villains = GameObject.FindGameObjectsWithTag("Villain");
-        for(int i = 0;i<villains.Length; i++)
+        bool a = true;
+        for (int i = 0; i < men.Count; i++)
         {
-            if(Vector3.Distance( villains[i].transform.position, carriage.transform.position) < 45 && villains[i].GetComponent<VillainScript>().alive && villains[i].transform.position.x+villains[i].transform.position.z>5)
+
+            if (men[i].alive)
             {
-                a = true;
-                break;
+                a = false;
             }
+
         }
-        if (!a && anim.GetBool("zoomed") == true)
+        if ((a || timer <= 0) && anim.GetBool("zoomed") == true)
         {
             ZoomOut();
-        }
 
+            for (int i = 0; i < men.Count; i++)
+            {
+               
+            }
+        }
     }
 
     public void ClearVillains()

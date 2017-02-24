@@ -9,11 +9,11 @@ public class MainScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        Application.targetFrameRate = 60;
     }
 	
-	// Update is called once per frame
+	// FixedUpdate is called once per frame
 	void Update () {
+        //Debug.Log("fps " + 1f / Time.deltaTime);
         if (Input.GetKeyDown(KeyCode.LeftAlt))
         {
             if (gameSpeed == 1)

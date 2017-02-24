@@ -27,8 +27,8 @@ public class GrenadeScript : MonoBehaviour {
 
     }
 
-	// Update is called once per frame
-	void Update () {
+	// FixedUpdate is called once per frame
+	void FixedUpdate () {
         if (active)
         {
             GetComponent<Rigidbody>().velocity = (player.grenadeTarget.transform.position - transform.position)*5; 

@@ -743,7 +743,7 @@ MonoBehaviour:
   angle: {x: 0, y: 90, z: 0}
   keepParent: 1
   objs:
-  - {fileID: 128396, guid: e9cbdd479506f6545add0bbaa77d5bf6, type: 2}
+  - {fileID: 173804, guid: 54cea4dff08557048893c200cfc6dfda, type: 2}
 --- !u!114 &11416186
 MonoBehaviour:
   m_ObjectHideFlags: 1
